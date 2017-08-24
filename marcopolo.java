@@ -37,10 +37,32 @@ public class MarcoPolo {
     System.out.println("Hey you\nHow goes it?\nLet's play the Marco Polos.");
 
     boolean gameOver = false;
-    
-    while(not gameOver) {
 
-    }
+    while(not gameOver) {
+      //Draw the board
+      for(int i = 0; i < board.length; i++) {
+        for(int j = 0; j < board[i].length; j++) {
+          switch(board[i][j]) {
+            case Empty:
+              System.out.print("_");
+              break;
+            case Player:
+              System.out.print("X");
+              break;
+            case Goal:
+              System.out.print("_");
+              break;
+            case Walked_Path:
+              System.out.print("#");
+              break;
+            default:
+              System.out.print("?");
+          }
+        }
+      }
+
+      int test = keyboard.nextInt();
+    }//Game loop
 
 
   }
