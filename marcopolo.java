@@ -1,5 +1,5 @@
 //Dr. JJ Shepherd
-from java.util import Random;
+import Java.util.*;
 public class MarcoPolo {
 
   public static final int BOARD_SIZE = 10; //Board Size
@@ -29,7 +29,7 @@ public class MarcoPolo {
 
     //Set board to Empty
     for(int i = 0; i < board.length; i++) {
-      for(int j = 0; j < board[i].length, j++) {
+      for(int j = 0; j < board[i].length; j++) {
         board[i][j] = Spaces.Empty;
       }
     }
@@ -38,7 +38,7 @@ public class MarcoPolo {
 
     boolean gameOver = false;
 
-    while(not gameOver) {
+    while(gameOver == false) {
       //Draw the board
       //Double for loop for multidimensional array
       for(int i = 0; i < board.length; i++) {
