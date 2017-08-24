@@ -40,8 +40,10 @@ public class MarcoPolo {
 
     while(not gameOver) {
       //Draw the board
+      //Double for loop for multidimensional array
       for(int i = 0; i < board.length; i++) {
         for(int j = 0; j < board[i].length; j++) {
+          //Switch case for iterating and displaying board.
           switch(board[i][j]) {
             case Empty:
               System.out.print("_");
@@ -59,6 +61,8 @@ public class MarcoPolo {
               System.out.print("?");
           }
         }
+        //To make rows(Not sure if this was in class.)
+        System.out.println("");
       }
 
       int test = keyboard.nextInt();
