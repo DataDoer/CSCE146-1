@@ -1,5 +1,5 @@
 //Dr. JJ Shepherd
-import Java.util.*;
+import java.util.*;
 public class MarcoPolo {
 
   public static final int BOARD_SIZE = 10; //Board Size
