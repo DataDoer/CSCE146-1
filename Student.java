@@ -30,8 +30,8 @@ public class Student extends Person {
 
   public boolean equals(Student aStudent) {
     return  aStudent != null && //First argument is redundant; super equals will return false if null
-          super.equals(aStudent) && //A student is always a person but not necessarily vice versa, POLYMORPHISM
-          this.id == aStudent.getID();
+            super.equals(aStudent) && //A student is always a person but not necessarily vice versa, POLYMORPHISM
+            this.id == aStudent.getID();
   }//equals
 
   public String toString() {
