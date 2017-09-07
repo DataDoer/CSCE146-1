@@ -13,14 +13,14 @@ public class UndergraduateRecordSystem {
                   new PrintWriter(new FileOutputStream(fileName, append));
       //Print header Data
       //This line is a problem, if append is true, then we're just adding new data, and we would just need to add new uGrads, and fix the header
-      fielWriter.println("Number of students" + DELIM + uGrads.length);
+      fileWriter.println("Number of students" + DELIM + uGrads.length);
       //Print body data
       for(int i = 0; i < uGrads.length; i++) { //cycle through uGrads
         fileWriter.println( uGrads[i].getName() + DELIM +
                             uGrads[i].getID() + DELIM +
                             uGrads[i].getLevel());//write into file
       }//for
-      fileWriter.close()
+      fileWriter.close();
     } catch (Exception e) {//Catch all
       System.out.println(e);//Let user know
     }//catch
@@ -39,7 +39,7 @@ public class UndergraduateRecordSystem {
 
       //Read header info
       String fileLine = fileScanner.nextLine(); //Get first line
-      String splitLines = fileLine.split(DELIM); //Split line by delimiter
+      String[] splitLines = fileLine.split(DELIM); //Split line by delimiter
       Ugrad[] uGrads;
       //Verify file is not corrupted
       //Read the header
@@ -66,9 +66,9 @@ public class UndergraduateRecordSystem {
         }//if check lines
       }//while
 
-      fileScanner.close()//always close
+      fileScanner.close();//always close
       return uGrads; //return ugrads
-      
+
     } catch (Exception e) {//Catch all
       System.out.println(e);//let user know
     }//catch

@@ -6,7 +6,7 @@ public class Ugrad extends Student {
     super();
     this.level = 1;
   }//Ugrad
-  public Ugrad(String aName; int anID, int aLevel) {//Parameterized Constructor
+  public Ugrad(String aName, int anID, int aLevel) {//Parameterized Constructor
     super(aName, anID);
     this.level = this.setLevel(aLevel);
   }//Ugrad parameterized
