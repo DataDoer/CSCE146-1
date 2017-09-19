@@ -10,7 +10,7 @@ public class TacoManager {
   public static final String DELIM = "\t";
 
   public TacoManager() {
-    this.tacos = new Taco[DEFAULT_SIZE];
+    this.tacos = new GenLinkedList<Taco>();
   }//Manager default Constructor
 
   public TacoManager(int size) {
