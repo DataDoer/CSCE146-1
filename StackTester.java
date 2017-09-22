@@ -14,6 +14,14 @@ public class StackTester {
 
     for(int i = 0; i < 10; i++) {
       System.out.println(lStack.pop());
+    }//for
+
+    String b = "34500000000";
+    try {
+      int c = Integer.parseInt(b);
+      System.out.println(c);
+    } catch (Exception e) {
+      System.out.println(e);
     }
 
   }
