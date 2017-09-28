@@ -21,8 +21,8 @@ public class RandomFractal extends Applet {
   }//paint
 
   public static void randomFractal(int leftX, int leftY, int rightX, int rightY, Graphics drawingArea) {
-    int stop = 4;//pixel limit
-    int max = 12;//This is y max movement
+    int stop = 1;//pixel limit
+    int max = 25;//This is y max movement
     int midX;
     int midY;
     int delta;
