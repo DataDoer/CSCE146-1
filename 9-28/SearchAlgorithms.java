@@ -33,11 +33,11 @@ public class SearchAlgorithms {
     }//if else
   }//binSearchRecur
 
-  public satic void bubbleSort(int[] a) {
+  public static void bubbleSort(int[] a) {
     boolean hasSwapped = true;
     while(hasSwapped) {//Keep running until no swaps are made
       hasSwapped = false;
-      for(int(i = 0; i< a.length-1; i++)) {
+      for(int i = 0; i< a.length-1; i++) {
         if(a[i] > a[i+1]) {//Out of order
           //Need to swap
           int temp = a[i];
