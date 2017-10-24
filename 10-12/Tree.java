@@ -1,8 +1,3 @@
-public class Tree <T>{
-  private class Node {
-    public Node
-  }
-}
 
 /*
 Introduction
@@ -28,5 +23,9 @@ Definitions
   Height of tree - the height of tree is the number of edges on the longest downward path between the root and a leaf
   Height of node - the height of node is the number of edges on the longest downward path between the node and a leaf
   Depth - the depth of the node is the number of edges from the node to the tree's root node
-
+Binary Search Tree (BS Tree)
+  A tree structure where each node has a comparable key
+  If a node value is larger than its parents it goes to the right subtree
+  If a node value is smaller than its parents it goes to the left subtree
+  Each node has at most 2 children
 */
