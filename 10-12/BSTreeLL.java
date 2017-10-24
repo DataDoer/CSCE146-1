@@ -1,6 +1,6 @@
 public class BSTreeLL <T extends Comparable<T>> {
   private class Node {//Vertex
-    private T data;
+    public T data;
     private Node leftChild;
     private Node rightChild;
     public Node(T aData) {
@@ -63,7 +63,7 @@ public class BSTreeLL <T extends Comparable<T>> {
   private Node delete(Node aNode, T value) {
     //Search
     if(aNode == null) return null;//Didn't find the value
-    if(value.compareTo(Node.adata) < 0){//Go left
+    if(value.compareTo(aNode.data) < 0){//Go left
       aNode.leftChild = delete(aNode.leftChild, value);
     } else if(value.compareTo(aNode.data) > 0) {
       aNode.rightChild = delete(aNode.rightChild, value);
@@ -84,11 +84,12 @@ public class BSTreeLL <T extends Comparable<T>> {
       aNode.rightChild = deleteMinFromTree(aNode.rightChild);
       aNode.leftChild = temp.leftChild;
     }//if else else
+    return null;
   }//delete
 
   private Node deleteMinFromTree(Node aNode) {
     if(aNode == null) return null;
-    if(aNode.leftChild ==null);
+    if(aNode.leftChild ==null)
     return aNode.rightChild;
     aNode.leftChild = deleteMinFromTree(aNode.leftChild);
     return aNode;
