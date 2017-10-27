@@ -56,56 +56,52 @@ public class BSTreeLL <T extends Comparable<T>> {
   }//printInOrder
 
   public void delete(T value) {
-    if(root == null) return;
-    delete(root, value);
-  }//delete
+   if(root == null) return;
+   delete(root, value);
+ }//delete
 
-  private Node delete(Node aNode, T value) {
-    //Search
-    if(aNode == null) return null;//Didn't find the value
-    if(value.compareTo(aNode.data) < 0){//Go left
-      aNode.leftChild = delete(aNode.leftChild, value);
-    } else if(value.compareTo(aNode.data) > 0) {
-      aNode.rightChild = delete(aNode.rightChild, value);
-    } else {//else
-      //Handles both cases
-      if(aNode.rightChild == null) {
-        return aNode.leftChild;
-      }//if
-      if(aNode.leftChild == null) {
-        return aNode.rightChild;
-      }//if
+ private Node delete(Node aNode, T value) {
+   //Search
+   if(aNode == null) return null;//Didn't find the value
+   if(value.compareTo(aNode.data) < 0){//Go left
+     aNode.leftChild = delete(aNode.leftChild, value);
+   } else if(value.compareTo(aNode.data) > 0) {
+     aNode.rightChild = delete(aNode.rightChild, value);
+   } else if(value.equals(aNode.data)){//else
+     //Handles both cases
+     if(aNode.rightChild == null) {
+       return aNode.leftChild;
+     }//if
+     if(aNode.leftChild == null) {
+       return aNode.rightChild;
+     }//if
 
-      //Handles case 3... Two children
-      Node temp = aNode;
-      aNode = findMinInTree(aNode.rightChild);
+     //Handles case 3... Two children
+     Node temp = aNode;
+     aNode = findMinInTree(aNode.rightChild);
 
-      //delete the min
-      aNode.rightChild = deleteMinFromTree(aNode.rightChild);
-      aNode.leftChild = temp.leftChild;
-    }//if else else
-    return null;
-  }//delete
+     //delete the min
+     aNode.rightChild = deleteMinFromTree(aNode.rightChild);
+     aNode.leftChild = temp.leftChild;
+   }//if else else
+   else {}
+   return null;
+ }//delete
 
-  private Node deleteMinFromTree(Node aNode) {
-    if(aNode == null) return null;
-    if(aNode.leftChild ==null)
-    return aNode.rightChild;
-    aNode.leftChild = deleteMinFromTree(aNode.leftChild);
-    return aNode;
-  }
+ private Node deleteMinFromTree(Node aNode) {
+   if(aNode == null) return null;
+   if(aNode.leftChild ==null)
+   return aNode.rightChild;
+   aNode.leftChild = deleteMinFromTree(aNode.leftChild);
+   return aNode;
+ }
 
-  private Node findMinInTree(Node aNode) {
-    if(aNode == null) return null;
-    if(aNode.leftChild == null) return aNode;
-    return findMinInTree(aNode.leftChild);
-  }//findMinInTree
+ private Node findMinInTree(Node aNode) {
+   if(aNode == null) return null;
+   if(aNode.leftChild == null) return aNode;
+   return findMinInTree(aNode.leftChild);
+ }//findMinInTree
 
-  private Node findMaxInTree(Node aNode) {
-    if(aNode == null) return null;
-    if(aNode.rightChild == null) return aNode;
-    return findMaxInTree(aNode.rightChild);
-  }//findMaxInTree
 
 }//BSTreeLL
 
