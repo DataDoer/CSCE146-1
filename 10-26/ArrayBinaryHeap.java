@@ -10,7 +10,7 @@ public class ArrayBinaryHeap <T extends Comparable> {
   }///ArrayBinaryHeap
   private void init(int size) {
     if(size <= 0) return;
-    heap = new (Process[])(Comparable[size]);
+    heap = new (T[])(Comparable[size]);
     lastIndex = 0;
   }//init
 
@@ -67,7 +67,7 @@ public class ArrayBinaryHeap <T extends Comparable> {
 
   public void heapSort() {
     while(lastIndex != 0) {
-      System.out.println(this.remove());
+      System.otthis.remove();
     }
   }//heapSort
 }//ArrayBinaryHeap
