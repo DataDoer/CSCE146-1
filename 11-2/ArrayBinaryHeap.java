@@ -1,11 +1,8 @@
-//I went ahead and made an ArrayBinaryHeap that works, I couldn't get the code from class to work no matter how much I debugged so I just wrote everything again by hand with lots of helper functions to make the code more visible
-
 public class ArrayBinaryHeap<T extends Comparable> {
   private T[] heap;
   private int lastIndex;
   private static final int normalSize = 25;
-  private static final int root = 1;//We are starting at 1 go to init to see how exactly I want to make this
-
+  private static final int root = 1;
   public ArrayBinaryHeap(int size) {
     init(size);
   }//ArrayBinaryHeap
@@ -43,7 +40,7 @@ public class ArrayBinaryHeap<T extends Comparable> {
     return val;
   }//remove
 
-  public String heapSortString() {//heapSort without deleting
+  public String heapSort() {//heapSort without deleting
     String b = "";
     ArrayBinaryHeap<T> abh = copy();
     while(!abh.isEmpty()){
@@ -52,20 +49,9 @@ public class ArrayBinaryHeap<T extends Comparable> {
     return b;
   }//heapsort
 
-  public T[] heapSort() {//heapSort without deleting original
-    T[] b = new T[heap.length];
-    index i = 0;
-    ArrayBinaryHeap<T> abh = copy();
-    while(!abh.isEmpty()){
-      b[i] = abh.remove();
-      i++;
-    }
-    return b;
-  }//heapsort
-
   public String toString() {
     String b = "";
-    for(int a = 0; a < lastIndex; a++) {
+    for(int a = root; a < lastIndex; a++) {
       b += heap[a] +"\n";
     }//for
     return b;
@@ -77,7 +63,7 @@ public class ArrayBinaryHeap<T extends Comparable> {
       abh.insert(heap[i]);
     }
     return abh;
-  }//copy
+  }
 
   //Private helpers
   private void init(int size) {
@@ -91,8 +77,6 @@ public class ArrayBinaryHeap<T extends Comparable> {
       8,9  10,11  12,13  14,15
     */
   }//init
-
-  //Index functions
 
   private int parent(int i) {
     return (i)/2;
