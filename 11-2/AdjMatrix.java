@@ -1,3 +1,6 @@
+//Justin Baum
+//00426510
+
 import java.util.*;
 
 public class AdjMatrix {
@@ -15,7 +18,7 @@ public class AdjMatrix {
   }//AdjMatrix
 
 
-  public addEdge(int fromVertex, int toVertex, double weight) {
+  public void addEdge(int fromVertex, int toVertex, double weight) {
     if(fromVertex < 0 || toVertex < 0 || fromVertex >= adjMatrix.length || toVertex >= adjMatrix.length) return;//make sure our indices are inbounds
     adjMatrix[fromVertex][toVertex] = weight;
   }//addEdge
@@ -25,8 +28,8 @@ public class AdjMatrix {
       for(int j = 0; j < adjMatrix.length; j++) {
         System.out.print(adjMatrix[i][j]+" ");
       }//for
+      System.out.println();
     }//for
-    System.out.println();
   }//printAdjMatrix
 
   public void printDFS() {
@@ -64,7 +67,7 @@ public class AdjMatrix {
     markedVerts.add(index);
     //Visit Neighbors
     for(int i = 0; i < adjMatrix[index].length; i++) {
-      if(adjMatrix[index][i] != 0 && !visitedVerts.contains(i)) {
+      if(adjMatrix[index][i] != 0.0 && !visitedVerts.contains(i)) {
         System.out.println(i);
         visitedVerts.add(i);
       }//if
