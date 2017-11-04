@@ -53,8 +53,8 @@ public class ArrayBinaryHeap<T extends Comparable> {
   }//heapsort
 
   public T[] heapSort() {//heapSort without deleting original
-    T[] b = new T[heap.length];
-    index i = 0;
+    T[] b = (T[])(new Comparable[heap.length]);
+    int i = 0;
     ArrayBinaryHeap<T> abh = copy();
     while(!abh.isEmpty()){
       b[i] = abh.remove();
