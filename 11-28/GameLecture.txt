@@ -1,0 +1,18 @@
+Objects for class
+
+Player
+  -health : int
+  +UserInput() : void
+  +Render() : void
+  +Update() : void
+
+ExplodingBarrel
+  -health : int
+  +Render() : void
+  +Update() : void
+
+Doesn't work, Player is not an instance of ExplodingBarrel
+
+Game Engine -> Has many Game Objects -> Has many Game Components
+More polymorphism
+Aggregate based
