@@ -1,0 +1,231 @@
+
+<!-- saved from url=(0062)https://cse.sc.edu/~shephejj/csce146/Labs/LABEXAM01_XMLOL.html -->
+<html data-ember-extension="1" class="gr__cse_sc_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 14 (filtered)">
+<title>LAB EXAM 01</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang="EN-US" link="blue" vlink="purple" data-gr-c-s-loaded="true" style="">
+
+<div class="WordSection1">
+
+<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:20.0pt">Lab Exam 1</span></p>
+
+<p class="MsoNormal" align="center" style="text-align:center"><span style="font-size:20.0pt">Simple XML Checker!</span></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">This exam is OPEN BOOK, OPEN NOTE, AND <b><u>NOT</u></b> OPEN
+INERNET.&nbsp; You are allowed on dropbox.cse.sc.edu to submit your work and my
+webpage cse.sc.edu/~shephejj/csce146/, but any other site will result in an
+automatic 0.&nbsp; We are allowed to answer questions, but we are not allowed to
+give advice or help.&nbsp; This is due at the end of the lab session.&nbsp; Good Luck!</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal"><b>Objective:</b></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">Write a program that checks whether or not a given file is
+formatted correctly for a very simple version of XML.&nbsp; In this simple version
+of XML you have tags that denote information.&nbsp; Each tag has a “start-tag”, and
+an “end-tag”.&nbsp; The start-tag is denoted by a value enclosed by “&lt; &gt;”, and
+the end-tag similarly denoted by “&lt;/ &gt;”.&nbsp; Each start-tag must have an
+end-tag. Elements fall in between the start and end tags, and can also other
+tags can be nested in as well.&nbsp; In this version of XML you can assume that tags
+and elements will always be on separate lines, and no additional attributes
+(such as &lt;value <b>id = “3”</b>&gt;) will be a part.</p>
+
+<ul style="margin-top:0in" type="disc">
+ <li class="MsoNormal">Well formatted example</li>
+</ul>
+
+<p class="MsoNormal" style="margin-left:.5in">&lt;good&gt;</p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 33</p>
+
+<p class="MsoNormal" style="margin-left:.5in">&lt;/good&gt;</p>
+
+<ul style="margin-top:0in" type="disc">
+ <li class="MsoNormal">Another well formatted example</li>
+</ul>
+
+<p class="MsoNormal" style="margin-left:.5in">&lt;good&gt;</p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;also good&gt;</p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100</p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/also good&gt;</p>
+
+<p class="MsoNormal" style="margin-left:.5in">&lt;/good&gt;</p>
+
+<ul style="margin-top:0in" type="disc">
+ <li class="MsoNormal">Not well formatted example</li>
+</ul>
+
+<p class="MsoNormal" style="margin-left:.5in">&lt;bad&gt;</p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 44</p>
+
+<p class="MsoNormal" style="margin-left:.5in">&lt;bad&gt;</p>
+
+<ul style="margin-top:0in" type="disc">
+ <li class="MsoNormal">Another not well formatted example</li>
+</ul>
+
+<p class="MsoNormal" style="margin-left:.5in">&lt;bad&gt;</p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;very bad&gt;</p>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 33</p>
+
+<p class="MsoNormal" style="margin-left:.5in">&lt;/bad&gt;</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">To solve this problem you must:</p>
+
+<ul style="margin-top:0in" type="disc">
+ <li class="MsoNormal">Write a stack, and use it to solve this problem</li>
+ <ul style="margin-top:0in" type="circle">
+  <li class="MsoNormal">You may NOT use the built-in java stack</li>
+  <li class="MsoNormal">You may either implement the stack as a linked structure
+      or an array.&nbsp; If you use an array assume the max size is 100;</li>
+ </ul>
+ <li class="MsoNormal">Write another class that has a main method which takes in
+     a file name and checks whether or not that file is correctly formatted.&nbsp; </li>
+ <li class="MsoNormal">Here’s a basic idea:</li>
+ <ul style="margin-top:0in" type="circle">
+  <li class="MsoNormal">If the next line is enclosed by “&lt; &gt;” with a tag in
+      between, then push the tag onto the stack</li>
+  <li class="MsoNormal">If the next line is enclosed by “&lt;/ &gt;” with a tag
+      in between, then</li>
+  <ul style="margin-top:0in" type="square">
+   <li class="MsoNormal">Pop one element off the stack</li>
+   <li class="MsoNormal">Check if that element matches with end-tag.&nbsp; If it does
+       then continue on, but if it doesn’t then it is not formatted correctly</li>
+  </ul>
+  <li class="MsoNormal">All other values and elements can be ignored</li>
+  <li class="MsoNormal">If by the end there are no tags left on the stack then it
+      is properly formatted, but if the stack still has tags then it is not
+      properly formatted.</li>
+ </ul>
+ <li class="MsoNormal">Also the string methods “charAt(index)” and
+     “substring(startIndex, endIndex)” may be very useful</li>
+ <li class="MsoNormal">Here are some files to test with</li>
+ <ul style="margin-top:0in" type="circle">
+  <li class="MsoNormal"><a href="https://cse.sc.edu/~shephejj/csce146/Labs/SimpleXMLCheckerFiles/goodXML1.txt">goodXML1</a></li>
+  <li class="MsoNormal"><a href="https://cse.sc.edu/~shephejj/csce146/Labs/SimpleXMLCheckerFiles/goodXML2.txt">goodXML2</a></li>
+  <li class="MsoNormal"><a href="https://cse.sc.edu/~shephejj/csce146/Labs/SimpleXMLCheckerFiles/goodXML3.txt">goodXML3</a></li>
+  <li class="MsoNormal"><a href="https://cse.sc.edu/~shephejj/csce146/Labs/SimpleXMLCheckerFiles/badXML1.txt">badXML1</a></li>
+  <li class="MsoNormal"><a href="https://cse.sc.edu/~shephejj/csce146/Labs/SimpleXMLCheckerFiles/badXML2.txt">badXML2</a></li>
+  <li class="MsoNormal"><a href="https://cse.sc.edu/~shephejj/csce146/Labs/SimpleXMLCheckerFiles/badXML3.txt">badXML3</a></li>
+ </ul>
+</ul>
+
+<p class="MsoNormal" style="margin-left:.5in">&nbsp;</p>
+
+<p class="MsoNormal"><b>Example Dialog:</b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">Welcome to the simple XML tester. Time to test simple XML's</span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">Enter a file name</span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">goodXML1.txt</span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">This XML File was formatted correctly</span></b></p>
+
+<p class="MsoNormal"><b>Another Example Dialog:</b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">Welcome to the simple XML tester. Time to test simple XML's</span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">Enter a file name</span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">badXML1.txt</span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">This XML file is not formatted correctly</span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">The tag "bad" does not have a match</span></b></p>
+
+<p class="MsoNormal"><b>Yet Another Example Dialog:</b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">Welcome to the simple XML tester. Time to test simple XML's</span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">Enter a file name</span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">badXML3.txt</span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">This XML File was not formatted correctly</span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">The following tags didn't have an end tag</span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">super really bad</span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">really bad</span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:14.0pt;font-family:&quot;Courier New&quot;;
+color:#0070C0">bad</span></b></p>
+
+<p class="MsoNormal"><b>Finally:</b></p>
+
+<p class="MsoNormal">Upload the .java file to the dropbox</p>
+
+</div>
+
+
+
+
+<iframe id="piggyDomainNotSupported" style="opacity: 0; display: none;" src="./LAB EXAM 01_files/saved_resource.html"></iframe><input style="position: absolute; top: -10000px;"></body></html>

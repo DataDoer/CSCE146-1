@@ -1,0 +1,37 @@
+<transform>
+	<location>
+		<x>
+			10
+		</x>
+		<y>
+			20
+		</y>
+		<z>
+			30
+		</z>
+	</location>
+	<rotation>
+		<pitch>
+			0
+		</pitch>
+		<yaw>
+			90
+		</yaw>
+		<roll>
+			180
+		</roll>
+	</rotation>
+	<scale>
+		<localX>
+			1
+		</localX>
+		<localY>
+			1
+		</localY>
+		<localZ>
+			1
+		</localZ>
+	</scale>
+	</bad>
+	<bad>
+</transform>

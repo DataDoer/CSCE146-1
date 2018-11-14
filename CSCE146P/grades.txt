@@ -1,0 +1,52 @@
+LABS
+100
+100
+100
+100
+100
+90
+90
+90
+90
+90
+85
+85
+85
+85
+85
+100
+100
+100
+100
+100
+80
+80
+95
+100
+110
+HOMEWORK
+0
+0
+0
+100
+100
+50
+EXAM 1
+65
+EXAM 2
+65
+LAB EXAM 1
+100
+LAB EXAM 2
+10
+FINAL
+0
+EXTRA CREDIT
+0
+0
+0
+0
+0
+
+Justin
+Error Handling, ignores here

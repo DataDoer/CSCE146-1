@@ -1,0 +1,6 @@
+<test>
+	<good>
+		This is a simple bad example!
+	</good>
+</test>
+<bad>
